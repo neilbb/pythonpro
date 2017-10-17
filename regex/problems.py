@@ -14,21 +14,23 @@ if __name__ == '__main__':
     f.close()
 
 
-
-
    # print(re.match(r"Lore",a))
    # print(50*'*')
    # print(re.search(r"ore",a))
     #print(80*'*')
 
-    #print(re.findall(r'\(?\d+\)?-?\s?\d+-\d+',a))
+    print(re.findall(r'\(?\d+\)?-?\s?\d+-\d+',a))
     print(re.findall(r'tree+',a,re.IGNORECASE))
 
-    #print(re.findall(r'[a-zA-z]+@[a-zA-z]+.[a-zA-Z]+',a,re.IGNORECASE))
+    print(re.findall(r'[a-zA-z]+@[a-zA-z]+.[a-zA-Z]+',a,re.IGNORECASE))
 
     print(re.findall(r'''
 
-        [a-zA-z]+@[a-zA-z]+.[a-zA-Z]+
+        [a-zA-z]+
+        @
+        [a-zA-z]+
+        .
+        [a-zA-Z]+
 
 
         ''',a,re.VERBOSE|re.IGNORECASE))
