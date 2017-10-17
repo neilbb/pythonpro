@@ -21,8 +21,11 @@ if __name__ == '__main__':
    # print(re.search(r"ore",a))
     #print(80*'*')
 
-    print(re.findall(r'\(?\d+\)?-?\s?\d+-\d+',a))
+    #print(re.findall(r'\(?\d+\)?-?\s?\d+-\d+',a))
+    print(re.findall(r'tree+',a,re.IGNORECASE))
 
+    #\d any number
+    #\w any character
 
     #print(a)
 
