@@ -24,6 +24,15 @@ if __name__ == '__main__':
     #print(re.findall(r'\(?\d+\)?-?\s?\d+-\d+',a))
     print(re.findall(r'tree+',a,re.IGNORECASE))
 
+    #print(re.findall(r'[a-zA-z]+@[a-zA-z]+.[a-zA-Z]+',a,re.IGNORECASE))
+
+    print(re.findall(r'''
+
+        [a-zA-z]+@[a-zA-z]+.[a-zA-Z]+
+
+
+        ''',a,re.VERBOSE|re.IGNORECASE))
+
     #\d any number
     #\w any character
 
