@@ -32,16 +32,37 @@ def add_entry():
             print("Saved successfully!")
 
 
-def view_entry():
+def view_entry(query=None):
     print("this is view_entry")
+    entries = Entry.select().order_by(Entry.timestamp.desc())
+    if query:
+        entries = entries.where(Entry.content.contains(query))
+
+    for e in entries:
+        timestamp = e.timestamp.strftime("%A %B %d,%Y %I:%M%p")
+        print(timestamp)
+        print('='*len(timestamp))
+        print(e.content)
+        print('N next entry')
+        print('q return to main menu')
+        next_action = input("Action: [Nq] ").lower().strip()
+        if next_action == 'q':
+            break
 
 def delete_entry(e):
     print("this is delete entry")
 
+def search_entries():
+    print("this is search_entries")
+    view_entry(input('Seach Query: '))
+
+
 menu = OrderedDict([
     ('a', add_entry),
-    ('v', view_entry)
+    ('v', view_entry),
+    ('s', search_entries)
     ])
+
 #the values are function names
 
 
