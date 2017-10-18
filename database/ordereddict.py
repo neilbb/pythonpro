@@ -15,6 +15,7 @@ regd = dict(
 
 for i,(k,v) in enumerate(od.items()):
 	print(i,k,v)
+	
 print(180*'*')
 
 for k,v in regd.items():

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3 
 
-from peewee import *
 from collections import OrderedDict
 import datetime
+import sys
 
+from peewee import *
 
 db = SqliteDatabase('tracker.db')
 
@@ -14,7 +15,6 @@ class Entry(Model):
 
     class Meta:
         database = db
-
 
 
 def initialize():
@@ -44,10 +44,10 @@ def show_menu():
 
         for i,(k,v) in enumerate(menu.items()):
             print("Press {}".format(k))
-            
+
 
         choice = input("Action: ").lower().strip()
-        
+
         if choice in menu:
             menu[choice]()
 
