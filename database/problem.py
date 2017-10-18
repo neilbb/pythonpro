@@ -1,12 +1,7 @@
-
-
-
-
 from peewee import *
 
 
 db = SqliteDatabase('students.db')
-
 
 class Student(Model):
 	username = CharField(max_length=255, unique=True)
@@ -32,7 +27,6 @@ s = [
 	{'user':'laladoe',
 	'lvl':302
 	},
-
 ]
 
 
