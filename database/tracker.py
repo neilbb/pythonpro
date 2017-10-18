@@ -44,13 +44,24 @@ def view_entry(query=None):
         print('='*len(timestamp))
         print(e.content)
         print('N next entry')
+        print('d delete entry')
         print('q return to main menu')
         next_action = input("Action: [Nq] ").lower().strip()
+
         if next_action == 'q':
             break
 
+        elif next_action == 'd':
+            delete_entry(e)
+
 def delete_entry(e):
     print("this is delete entry")
+    if input("Are you sure? you want to delete? [yn] ").lower() == "y":
+        e.delete_instance()
+        print("entry deleted")
+
+
+
 
 def search_entries():
     print("this is search_entries")
