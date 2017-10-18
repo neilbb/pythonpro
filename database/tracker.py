@@ -22,9 +22,15 @@ def initialize():
     db.create_tables([Entry],safe=True)
 
 
-
 def add_entry():
     print("this is add_entry")
+    print("Enter entry. Press ctrl+d when finished")
+    data = sys.stdin.read().strip() # strip to remove whitespace
+    if data:
+        if input('Save Entry? [Yn]').lower() !='n':
+            Entry.create(content=data)
+            print("Saved successfully!")
+
 
 def view_entry():
     print("this is view_entry")
@@ -36,6 +42,8 @@ menu = OrderedDict([
     ('a', add_entry),
     ('v', view_entry)
     ])
+#the values are function names
+
 
 def show_menu():
     choice = None
@@ -44,7 +52,6 @@ def show_menu():
 
         for i,(k,v) in enumerate(menu.items()):
             print("Press {}".format(k))
-
 
         choice = input("Action: ").lower().strip()
 
