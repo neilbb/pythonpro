@@ -1,7 +1,7 @@
 
 from collections import OrderedDict
 
-
+'''
 od = OrderedDict([
     ('a',123),
     ('b',777)
@@ -22,7 +22,7 @@ for k,v in regd.items():
     print(k,v)
 
 
-
+'''
 def test(a,b):
     """
 
@@ -30,11 +30,11 @@ def test(a,b):
     7
 
     >>> test(10,2)
-    12
+    122
 
     """
 
     return a + b
 
-#if __name__ == '__main__':
-    #test(4,3)
+if __name__ == '__main__':
+    test(4,3)
