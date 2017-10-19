@@ -3,6 +3,7 @@
 from collections import OrderedDict
 import datetime
 import sys
+import os
 
 from peewee import *
 
@@ -18,9 +19,12 @@ class Entry(Model):
 
 
 def initialize():
+    '''Sets up database '''
     db.connect()
     db.create_tables([Entry],safe=True)
 
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def add_entry():
     print("this is add_entry")
@@ -29,8 +33,8 @@ def add_entry():
     if data:
         if input('Save Entry? [Yn]').lower() !='n':
             Entry.create(content=data)
-            print("Saved successfully!")
-
+            print("Saved successfully!")        
+    return 1
 
 def view_entry(query=None):
     print("this is view_entry")
@@ -53,6 +57,8 @@ def view_entry(query=None):
 
         elif next_action == 'd':
             delete_entry(e)
+
+        #clear()
 
 def delete_entry(e):
     print("this is delete entry")
