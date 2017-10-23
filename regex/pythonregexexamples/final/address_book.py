@@ -33,6 +33,9 @@ line = re.compile(r'''
 for match in line.finditer(data): # returns match object
     #print('{first} {last} <{email}>'.format(**match.groupdict()))
 	print(match)
-
+	#will print match object
+	#print(tuple(match.groups())) 
+	
 print(180*'*')
 print(line.finditer(data))
+
